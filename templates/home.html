@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - Cloud & DevOps Expert</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+            100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        }
+
+        .job-title-display {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #667eea;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1rem;
+            margin: 1rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+            to { box-shadow: 0 0 30px rgba(102, 126, 234, 0.6); }
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #764ba2, #667eea);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-custom:hover::before {
+            left: 0;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .skill-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 60%; right: 10%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #667eea;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #667eea; }
+        }
+
+        .experience-section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cloud-provider {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-cloud me-2"></i>Cloud Expert
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/certifications"><i class="fas fa-certificate me-1"></i>Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/job-support"><i class="fas fa-headset me-1"></i>Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials"><i class="fas fa-star me-1"></i>Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <div class="profile-card">
+                        <img src="{{ profile_data.profile_picture }}" class="profile-image mb-4" alt="Profile Photo">
+                        <h2 class="mb-3 typing-effect">{{ profile_data.name }}</h2>
+                        <div class="job-title-display" id="jobTitleDisplay">
+                            <i class="fas fa-cog fa-spin me-2"></i>
+                            <span id="jobTitleText">Loading...</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="/contact" class="btn btn-custom">
+                                <i class="fas fa-rocket me-2"></i>Hire Me
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                            <a href="{{ url_for('download_resume') }}" class="btn btn-outline-secondary">
+                                <i class="fas fa-file-alt me-2"></i>Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="profile-card">
+                        <h3 class="mb-4"><i class="fas fa-user me-2"></i>Professional Summary</h3>
+                        <p class="mb-4">Experienced Cloud & DevOps professional with 8+ years of expertise across AWS, Azure, and GCP. Specialized in Cloud Security, DevSecOps, SRE, and Platform Engineering. Delivered 120+ successful projects with focus on security, scalability, and automation.</p>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-cloud me-2"></i>Cloud Platforms</h5>
+                            <span class="cloud-provider">AWS</span>
+                            <span class="cloud-provider">Azure</span>
+                            <span class="cloud-provider">GCP</span>
+                            <span class="cloud-provider">Oracle Cloud</span>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <span class="skill-badge" style="animation-delay: 0.1s">
+                                <i class="fas fa-clock me-1"></i>8+ Years Experience
+                            </span>
+                            <span class="skill-badge" style="animation-delay: 0.2s">
+                                <i class="fas fa-certificate me-1"></i>6 Certifications
+                            </span>
+                            <span class="skill-badge" style="animation-delay: 0.3s">
+                                <i class="fas fa-code me-1"></i>120+ Projects
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x text-white"></i>
+        </div>
+    </section>
+
+    <!-- Technical Capabilities Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-tools me-3"></i>Technical Capabilities
+            </h2>
+            <p class="section-subtitle">Comprehensive skills across cloud platforms, security, and automation</p>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-shield-alt me-2"></i>Cloud Security</h5>
+                        <p>IAM, Security Groups, WAF, CloudTrail, GuardDuty, Security Hub, Compliance frameworks</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-code me-2"></i>Programming & Development</h5>
+                        <p>Python, Go, JavaScript, Terraform, CloudFormation, ARM Templates, Shell Scripting</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-cogs me-2"></i>DevOps & CI/CD</h5>
+                        <p>Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes, Helm, ArgoCD</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-network-wired me-2"></i>Cloud Networking</h5>
+                        <p>VPC, Subnets, Load Balancers, API Gateway, CloudFront, CDN, VPN</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-robot me-2"></i>AI/ML Tools</h5>
+                        <p>SageMaker, Azure ML, Vertex AI, TensorFlow, PyTorch, MLOps pipelines</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <h5><i class="fas fa-database me-2"></i>Data & Storage</h5>
+                        <p>RDS, DynamoDB, Cosmos DB, BigQuery, S3, Blob Storage, Data Lakes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase me-3"></i>Services Offered
+            </h2>
+            <p class="section-subtitle">Comprehensive cloud and DevOps services to accelerate your digital transformation</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-shield-alt me-2"></i>Cloud Security Implementation</h5>
+                        <p>Implement comprehensive security frameworks including IAM policies, network security, compliance monitoring, and threat detection across multi-cloud environments.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-code me-2"></i>CI/CD Pipeline Development</h5>
+                        <p>Design and implement automated CI/CD pipelines for seamless application deployment, testing, and rollback capabilities across multiple environments.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-cloud-upload-alt me-2"></i>Cloud Migration</h5>
+                        <p>End-to-end cloud migration services including assessment, planning, execution, and optimization for legacy applications and infrastructure.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-cogs me-2"></i>Platform Engineering</h5>
+                        <p>Build and maintain internal developer platforms (IDPs) with self-service capabilities, automated provisioning, and standardized tooling.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-network-wired me-2"></i>Cloud Networking</h5>
+                        <p>Design and implement scalable network architectures with load balancing, auto-scaling, and high availability across multiple regions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h5><i class="fas fa-robot me-2"></i>AI/ML Infrastructure</h5>
+                        <p>Build and deploy AI/ML infrastructure with automated model training, deployment pipelines, and monitoring systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Enhanced job title rotation with responsibilities
+        const jobTitles = [
+            {
+                title: 'Cloud Security Engineer',
+                description: 'Implementing security controls, IAM policies, and compliance frameworks across multi-cloud environments'
+            },
+            {
+                title: 'DevSecOps Engineer',
+                description: 'Integrating security into CI/CD pipelines, automated security testing, and vulnerability management'
+            },
+            {
+                title: 'DevOps Engineer',
+                description: 'Building CI/CD pipelines, infrastructure automation, and deployment strategies'
+            },
+            {
+                title: 'Site Reliability Engineer (SRE)',
+                description: 'Ensuring system reliability, monitoring, incident response, and performance optimization'
+            },
+            {
+                title: 'Platform Engineer',
+                description: 'Building internal developer platforms, self-service infrastructure, and developer tooling'
+            }
+        ];
+        
+        let jobIndex = 0;
+        
+        function rotateJobTitles() {
+            const jobTitleText = document.getElementById('jobTitleText');
+            const currentJob = jobTitles[jobIndex];
+            
+            jobTitleText.style.opacity = '0';
+            jobTitleText.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+                jobTitleText.innerHTML = `<strong>${currentJob.title}</strong><br><small>${currentJob.description}</small>`;
+                jobTitleText.style.opacity = '1';
+                jobTitleText.style.transform = 'translateY(0)';
+                jobIndex = (jobIndex + 1) % jobTitles.length;
+            }, 300);
+        }
+        
+        setInterval(rotateJobTitles, 3000);
+        window.onload = rotateJobTitles;
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-badge, .service-card').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
