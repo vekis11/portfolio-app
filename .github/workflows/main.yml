@@ -28,8 +28,8 @@ jobs:
       - name: Log in to DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.vekis11k }}
+          password: ${{ secrets.t87cIEvfUnxTWsQW }}
 
       - name: Push Docker image
         run: |
