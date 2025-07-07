@@ -35,8 +35,8 @@ jobs:
         run: |
           docker push vekis1k/portfolio-app:latest
 
-      # - name: Deploy to Kubernetes
-      #   run: |
-      #     kubectl apply -f k8s-deployment.yaml
-      #   env:
-      #     KUBECONFIG: ${{ secrets.KUBECONFIG }} 
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s-deployment.yaml
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }} 
