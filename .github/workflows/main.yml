@@ -33,7 +33,7 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push your-dockerhub-username/portfolio-app:latest
+          docker push vekis1k/portfolio-app:latest
 
       # - name: Deploy to Kubernetes
       #   run: |
