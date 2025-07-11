@@ -1,0 +1,46 @@
+title: VekisTech - Cloud & DevOps Expert
+description: Professional portfolio showcasing cloud infrastructure, DevOps practices, and technical expertise
+url: "https://vekistech.pro"
+baseurl: ""
+
+# Build settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - app.py
+  - requirements.txt
+  - Dockerfile
+  - k8s-deployment.yaml
+  - .github/workflows/main.yml
+  - .github/workflows/test.yml
+  - .github/workflows/cicd.yml 
