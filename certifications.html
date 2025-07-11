@@ -1,0 +1,314 @@
+---
+layout: default
+title: Certifications - VekisTech
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - VekisTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .certifications-container {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .cert-level {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .level-associate { background: #28a745; color: white; }
+        .level-professional { background: #007bff; color: white; }
+        .level-specialty { background: #6f42c1; color: white; }
+        .level-expert { background: #dc3545; color: white; }
+
+        .section-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .cert-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-description {
+            color: #495057;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-cloud me-2"></i>VekisTech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/certifications.html"><i class="fas fa-certificate me-1"></i>Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/job-support.html"><i class="fas fa-headset me-1"></i>Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials.html"><i class="fas fa-star me-1"></i>Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="certifications-container">
+        <div class="container">
+            <h1 class="section-title text-center mb-5">
+                <i class="fas fa-certificate me-3"></i>Professional Certifications
+            </h1>
+            <p class="section-subtitle">Validated expertise across cloud platforms and DevOps practices</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <span class="cert-level level-professional">Professional</span>
+                        <h3>AWS Solutions Architect Professional</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: December 2023
+                        </div>
+                        <p class="cert-description">
+                            Advanced certification demonstrating expertise in designing distributed systems on AWS. 
+                            Covers complex architectural patterns, cost optimization, and security best practices.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <span class="cert-level level-specialty">Specialty</span>
+                        <h3>AWS Security Specialty</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: November 2023
+                        </div>
+                        <p class="cert-description">
+                            Specialized certification in AWS security services and best practices. 
+                            Covers IAM, encryption, monitoring, and compliance frameworks.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <span class="cert-level level-associate">Associate</span>
+                        <h3>AWS DevOps Engineer Associate</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: October 2023
+                        </div>
+                        <p class="cert-description">
+                            Certification focused on implementing and managing continuous delivery systems 
+                            and methodologies on AWS, including CI/CD pipelines and automation.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <span class="cert-level level-expert">Expert</span>
+                        <h3>Microsoft Azure Solutions Architect Expert</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: September 2023
+                        </div>
+                        <p class="cert-description">
+                            Expert-level certification for designing and implementing solutions on Microsoft Azure. 
+                            Covers advanced architectural patterns and enterprise-scale deployments.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <span class="cert-level level-professional">Professional</span>
+                        <h3>Google Cloud Professional Cloud Architect</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: August 2023
+                        </div>
+                        <p class="cert-description">
+                            Professional certification for designing, developing, and managing cloud architecture 
+                            on Google Cloud Platform with focus on security, scalability, and reliability.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fas fa-docker"></i>
+                        </div>
+                        <span class="cert-level level-associate">Associate</span>
+                        <h3>Docker Certified Associate</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: July 2023
+                        </div>
+                        <p class="cert-description">
+                            Certification demonstrating proficiency in Docker containerization technology, 
+                            including image creation, container orchestration, and best practices.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fas fa-kubernetes"></i>
+                        </div>
+                        <span class="cert-level level-associate">Associate</span>
+                        <h3>Certified Kubernetes Administrator (CKA)</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: June 2023
+                        </div>
+                        <p class="cert-description">
+                            Certification validating skills in Kubernetes cluster administration, 
+                            including installation, configuration, and troubleshooting of production workloads.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="cert-card">
+                        <div class="cert-badge">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span class="cert-level level-professional">Professional</span>
+                        <h3>Certified Information Systems Security Professional (CISSP)</h3>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar me-2"></i>Issued: May 2023
+                        </div>
+                        <p class="cert-description">
+                            Globally recognized certification in information security, covering security 
+                            architecture, engineering, and management across various domains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

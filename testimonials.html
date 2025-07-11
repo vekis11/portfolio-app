@@ -1,0 +1,327 @@
+---
+layout: default
+title: Testimonials - VekisTech
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - VekisTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .testimonials-container {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .client-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #667eea;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #495057;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-info h5 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .client-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-cloud me-2"></i>VekisTech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/certifications.html"><i class="fas fa-certificate me-1"></i>Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/job-support.html"><i class="fas fa-headset me-1"></i>Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/testimonials.html"><i class="fas fa-star me-1"></i>Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="testimonials-container">
+        <div class="container">
+            <h1 class="section-title text-center mb-5">
+                <i class="fas fa-star me-3"></i>Client Testimonials
+            </h1>
+            <p class="section-subtitle">What clients say about working with VekisTech</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=JD" class="client-avatar" alt="John Doe">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with VekisTech was a game-changer for our organization. The multi-cloud migration project was executed flawlessly, 
+                            with zero downtime and significant cost savings. The team's expertise in AWS, Azure, and GCP is unmatched."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>John Doe</h5>
+                            <p>CTO, TechCorp Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/764ba2/ffffff?text=JS" class="client-avatar" alt="Jane Smith">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The DevSecOps implementation transformed our development process. Security is now integrated seamlessly, 
+                            and our deployment frequency increased by 300%. Highly recommend for any organization serious about security."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>Jane Smith</h5>
+                            <p>DevOps Director, SecureBank</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=MB" class="client-avatar" alt="Mike Brown">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The AI/ML infrastructure project exceeded our expectations. We now have a scalable platform supporting 50+ models 
+                            with automated training and deployment. The MLOps implementation is world-class."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>Mike Brown</h5>
+                            <p>Head of AI, DataTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/764ba2/ffffff?text=SW" class="client-avatar" alt="Sarah Wilson">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The internal developer platform has revolutionized how our teams work. Self-service infrastructure provisioning 
+                            reduced deployment time from days to minutes. The platform engineering expertise is exceptional."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>Sarah Wilson</h5>
+                            <p>VP Engineering, CloudScale</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/667eea/ffffff?text=DJ" class="client-avatar" alt="David Johnson">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The cloud security framework implementation was comprehensive and thorough. We achieved SOC 2 compliance 
+                            and significantly improved our security posture. The team's attention to detail is remarkable."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>David Johnson</h5>
+                            <p>CISO, FinTech Global</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-card position-relative">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/80x80/764ba2/ffffff?text=LM" class="client-avatar" alt="Lisa Martinez">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The data lake and analytics platform handles petabytes of data with incredible performance. 
+                            Real-time streaming and batch processing work seamlessly. This has transformed our data strategy."
+                        </p>
+                        <div class="client-info text-center">
+                            <h5>Lisa Martinez</h5>
+                            <p>CDO, AnalyticsPro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

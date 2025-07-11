@@ -1,0 +1,335 @@
+---
+layout: default
+title: Projects - VekisTech
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - VekisTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .projects-container {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn-project {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .section-title {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-cloud me-2"></i>VekisTech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/certifications.html"><i class="fas fa-certificate me-1"></i>Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/job-support.html"><i class="fas fa-headset me-1"></i>Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/testimonials.html"><i class="fas fa-star me-1"></i>Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="projects-container">
+        <div class="container">
+            <h1 class="section-title text-center mb-5">
+                <i class="fas fa-project-diagram me-3"></i>Featured Projects
+            </h1>
+            <p class="section-subtitle">Showcasing successful cloud infrastructure and DevOps implementations</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/667eea/ffffff?text=Multi-Cloud+Migration" class="project-image" alt="Multi-Cloud Migration">
+                        <h3>Multi-Cloud Migration & Infrastructure</h3>
+                        <p>Led the migration of a legacy on-premises application to a multi-cloud architecture using AWS, Azure, and GCP. Implemented automated CI/CD pipelines, monitoring, and disaster recovery solutions.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">Azure</span>
+                            <span class="tech-badge">GCP</span>
+                            <span class="tech-badge">Terraform</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Kubernetes</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/764ba2/ffffff?text=DevSecOps+Platform" class="project-image" alt="DevSecOps Platform">
+                        <h3>DevSecOps Platform Implementation</h3>
+                        <p>Built a comprehensive DevSecOps platform integrating security scanning, vulnerability assessment, and compliance monitoring into CI/CD pipelines. Reduced security incidents by 85%.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">Jenkins</span>
+                            <span class="tech-badge">SonarQube</span>
+                            <span class="tech-badge">OWASP ZAP</span>
+                            <span class="tech-badge">HashiCorp Vault</span>
+                            <span class="tech-badge">Prometheus</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/667eea/ffffff?text=AI+ML+Infrastructure" class="project-image" alt="AI/ML Infrastructure">
+                        <h3>AI/ML Infrastructure & MLOps</h3>
+                        <p>Designed and implemented scalable AI/ML infrastructure with automated model training, deployment pipelines, and monitoring systems. Supported 50+ ML models in production.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">SageMaker</span>
+                            <span class="tech-badge">Kubeflow</span>
+                            <span class="tech-badge">MLflow</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">PyTorch</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/764ba2/ffffff?text=Platform+Engineering" class="project-image" alt="Platform Engineering">
+                        <h3>Internal Developer Platform (IDP)</h3>
+                        <p>Built a self-service internal developer platform enabling teams to provision infrastructure, deploy applications, and manage resources through a unified interface.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">Backstage</span>
+                            <span class="tech-badge">ArgoCD</span>
+                            <span class="tech-badge">Helm</span>
+                            <span class="tech-badge">Istio</span>
+                            <span class="tech-badge">Grafana</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/667eea/ffffff?text=Cloud+Security" class="project-image" alt="Cloud Security">
+                        <h3>Cloud Security & Compliance Framework</h3>
+                        <p>Implemented comprehensive cloud security framework including IAM policies, network security, compliance monitoring, and threat detection across multi-cloud environments.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">AWS IAM</span>
+                            <span class="tech-badge">Azure AD</span>
+                            <span class="tech-badge">CloudTrail</span>
+                            <span class="tech-badge">GuardDuty</span>
+                            <span class="tech-badge">Security Hub</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/600x300/764ba2/ffffff?text=Data+Platform" class="project-image" alt="Data Platform">
+                        <h3>Data Lake & Analytics Platform</h3>
+                        <p>Built a scalable data lake and analytics platform processing petabytes of data with real-time streaming, batch processing, and advanced analytics capabilities.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">S3</span>
+                            <span class="tech-badge">Glue</span>
+                            <span class="tech-badge">Athena</span>
+                            <span class="tech-badge">Kinesis</span>
+                            <span class="tech-badge">Redshift</span>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-project">
+                                <i class="fas fa-external-link-alt me-2"></i>View Details
+                            </a>
+                            <a href="#" class="btn btn-project">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
